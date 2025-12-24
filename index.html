@@ -642,7 +642,6 @@ iframe{
   <button class="tab" data-stage="V3" onclick="switchStage('V3')">⚡ Định Mệnh</button>
   <button class="tab" data-stage="V4" onclick="switchStage('V4')">💥 Tổng Lực</button>
   <button class="tab" data-stage="V5" onclick="switchStage('V5')">👑 Chinh Phục</button>
-  <button class="tab" data-stage="V6" onclick="switchStage('V6')">🐉 Chiến Thần</button>
 </div>
 
 <section class="inner-round">
@@ -674,12 +673,11 @@ iframe{
 
     <h3>⚔️ Thể Lệ</h3>
     <ul>
-      <li>Khai Chiến: 17 người – 2 lá thăm may mắn (vượt qua vòng )</li>
-      <li>Huyết Đấu: 8 trận – 8 thắng + 1 thăm may mắn (vượt qua vòng )</li>
-      <li>Định Mệnh: 4 trận – 4 thắng + 1 thăm may mắn (vượt qua vòng )</li>
-      <li>Tổng Lực: 2 trận – 2 thắng + 1 thăm may mắn (vượt qua vòng )</li>
-      <li>Chinh Phục: 1 trận – 1 thắng + 1 thăm may mắn (vượt qua vòng )</li>
-      <li>Chiến Thần: Trận cuối định thiên hạ</li>
+      <li>Khai Chiến: chọn ra 16 người </li>
+      <li>Huyết Đấu: 8 trận – 8 thắng </li>
+      <li>Định Mệnh: 4 trận – 4 thắng </li>
+      <li>Tổng Lực: 2 trận – 2 thắng </li>
+      <li>Chinh Phục: 1 trận – 1 thắng </li>
     </ul>
 
     <p>
@@ -747,12 +745,11 @@ const STATUS_MAP={
 };
 
 const STAGES={
-  V1:{name:"Khai Chiến",limit:17},
-  V2:{name:"Huyết Đấu",limit:9},
-  V3:{name:"Định Mệnh",limit:5},
-  V4:{name:"Tổng Lực",limit:3},
-  V5:{name:"Chinh Phục",limit:2},
-  V6:{name:"Chiến Thần",limit:1}
+  V1:{name:"Khai Chiến",limit:16},
+  V2:{name:"Huyết Đấu",limit:8},
+  V3:{name:"Định Mệnh",limit:4},
+  V4:{name:"Tổng Lực",limit:2},
+  V5:{name:"Chinh Phục",limit:1},
 };
 
 const getStage=id=>id.split("-")[0];
@@ -902,7 +899,7 @@ function closeRank(){
 }
 function openChampion(){
   const final = MATCHES.find(
-    m => getStage(m.id) === "V6" && m.winner
+    m => getStage(m.id) === "V5" && m.winner
   );
 
   const nameBox = document.getElementById("championName");
@@ -945,4 +942,3 @@ setInterval(loadData,5000);
 
 </body>
 </html>
-
